@@ -1,0 +1,27 @@
+public class Calculator{
+    public static double calculate(double a,double b,String operator){
+        switch(operator){
+            case "+":
+                return a + b;
+            case "-":
+                return a - b;
+            case "*":
+                return a * b;
+            case "/":
+                if (b != 0) {
+                    return a / b;
+                } else {
+                    throw new IllegalArgumentException("Division by zero is not allowed.");
+                }
+            default:
+                throw new IllegalArgumentException("Invalid operator");
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("10 + 8 = " + calculate(10, 8, "+"));
+        System.out.println("10 - 8 = " + calculate(10, 8, "-"));
+        System.out.println("10 * 8 = " + calculate(10, 8, "*"));
+        System.out.println("10 / 8 = " + calculate(10, 8, "/"));
+    }
+}
